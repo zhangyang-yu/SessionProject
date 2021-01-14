@@ -1,0 +1,15 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: session-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+      - id: session-redis
+        uri: lb://session-redis
+        predicates:
+               - Path=/*/session/**

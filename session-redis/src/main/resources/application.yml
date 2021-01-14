@@ -1,0 +1,14 @@
+server:
+  port: 8070  #配置服务的端口号
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #配置微服务的注册中心
+  application:
+    name: session-redis  #配置微服务的名字
+  redis:
+    port: 6379   #配置redis服务的端口号
+    host: 192.168.127.128   #配置redis的地址
+  session:
+    store-type: redis  #配置rsession域使用redis存储
